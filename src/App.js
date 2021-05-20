@@ -61,7 +61,7 @@ function App() {
 	};
   
   const handleDelete = (song) => {
-    fetch(url + "/songs/", {
+    fetch(url + "/songs/" + song._id, {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json'
@@ -95,8 +95,9 @@ function App() {
 		<div className="App">
 			<header>Tunr header</header>
 			<PlayList songs={playList}/>
-			<SongList handleAddPlay={handleAddPlay} handleUpdateClick={handleUpdateClick} songs={songs} />
+			<SongList handleDelete={handleDelete} handleAddPlay={handleAddPlay} handleUpdateClick={handleUpdateClick} songs={songs} />
 			<Form
+
 				handleUpdate={handleUpdate}
 				handleCreate={handleCreate}
 				mode={formMode}

@@ -6,6 +6,7 @@ const Song = (props) => {
 			<span>{props.song.title}</span>
 			<span>{props.song.artist}</span>
 			<span>{props.song.time}</span>
+			<button onClick={()=>{props.handleDelete(props.song)}}>Delete</button>
 			<button onClick={()=>{props.handleAddPlay(props.song)}}>Play</button>
 		</section>
 	);
