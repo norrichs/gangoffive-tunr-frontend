@@ -57,15 +57,18 @@ function App() {
 				"Content-Type": "application/json",
 			},
 			body: JSON.stringify(song),
-		}).then(() => {
-			getSongs();
-		});
+		}).then(getSongs());
 	};
   
+  const handleDelete = (song) => {
+    fetch(url + "/songs/", {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }).then(getSongs())
+  }
   
-
-
-
 
 	//  other Functions
 	const getSongs = () => {
