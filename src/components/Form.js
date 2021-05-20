@@ -19,12 +19,11 @@ const Form = (props) => {
     alert('Song has been updated!');
   }
   
- 
    return (
     <form onSubmit={(e) => {props.handleCreate(formData)
       e.preventDefault()
     }}>
-      
+          
       <input
         type="text"
         name="title"
