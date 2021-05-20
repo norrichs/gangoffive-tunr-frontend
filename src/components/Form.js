@@ -1,4 +1,5 @@
 import React from "react";
+
  
 const Form = (props) => {
   //STATE FOR THE FORM
@@ -14,10 +15,16 @@ const Form = (props) => {
   const handleChange = (event) => {
     setFormData({ ...formData, [event.target.name]: event.target.value });
   };
-
-   return (
-    <form onSubmit={handleSubmit}>
+  function sayUpdate() {
+    alert('Song has been updated!');
+  }
+  
  
+   return (
+    <form onSubmit={(e) => {props.handleCreate(formData)
+      e.preventDefault()
+    }}>
+      
       <input
         type="text"
         name="title"
@@ -37,7 +44,8 @@ const Form = (props) => {
         onChange={handleChange}
       />
       <input type="submit" value={props.label} />
-      {/* <button onClick={Update}>Update</button> */}
+     
+      <button onClick={sayUpdate}>Update</button>
 
     </form>
   );
