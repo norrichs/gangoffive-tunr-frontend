@@ -24,23 +24,28 @@ const Form = (props) => {
       e.preventDefault()
     }}>
           
-      <input
-        type="text"
-        name="title"
-        value={formData.title}
-        onChange={handleChange}
-      />
+  
+        <input
+          type="text"
+          name="title"
+          value={formData.title}
+          onChange={handleChange}
+          placeholder="Song Title"
+        />
+
       <input
         type="text"
         name="artist"
         value={formData.artist}
         onChange={handleChange}
+        placeholder="Artist"
       />
       <input
         type="text"
         name="time"
         value={formData.time}
         onChange={handleChange}
+        placeholder="Time"
       />
       <input type="submit" value={props.label} />
      
