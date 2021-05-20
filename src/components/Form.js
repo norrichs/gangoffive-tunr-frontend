@@ -1,7 +1,5 @@
 import React from "react";
-
-
-
+ 
 const Form = (props) => {
   //STATE FOR THE FORM
   const [formData, setFormData] = React.useState(props.song);
@@ -16,12 +14,14 @@ const Form = (props) => {
   const handleChange = (event) => {
     setFormData({ ...formData, [event.target.name]: event.target.value });
   };
- 
- 
 
-  return (
+   return (
     <form onSubmit={handleSubmit}>
       <input 
+  return (
+    <form onSubmit={handleSubmit}>
+      <input
+
         type="text"
         name="title"
         value={formData.title}
@@ -39,7 +39,8 @@ const Form = (props) => {
         value={formData.time}
         onChange={handleChange}
       />
-      <input type="submit" value="Create" />
+      <input type="submit" value={props.label} />
+
     </form>
   );
 };
