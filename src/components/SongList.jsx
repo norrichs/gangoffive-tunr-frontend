@@ -1,7 +1,7 @@
 import React from 'react'
 
-const SongList = (props) => {
-
+const SongList = ({songs}) => {
+	
 	return (
 		<div>SongList stub</div>
 	)
