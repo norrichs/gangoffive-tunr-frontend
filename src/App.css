@@ -36,3 +36,10 @@
     transform: rotate(360deg);
   }
 }
+
+
+.song-component {
+  border: 1px solid black;
+  display: flex;
+  justify-content: space-between;
+}
