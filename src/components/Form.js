@@ -38,7 +38,7 @@ const Form = (props) => {
         onChange={handleChange}
       />
       <input
-        type="number"
+        type="text"
         name="time"
         value={formData.time}
         onChange={handleChange}
