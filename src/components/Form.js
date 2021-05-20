@@ -17,9 +17,6 @@ const Form = (props) => {
 
    return (
     <form onSubmit={handleSubmit}>
-      <input 
-  return (
-    <form onSubmit={handleSubmit}>
       <input
 
         type="text"

@@ -1,8 +1,8 @@
 import "./App.css";
 import React from "react";
 import { useEffect, useState } from "react";
-// import axios from 'axios'
-// import PlayList from "./components/PlayList";
+
+import PlayList from "./components/PlayList";
 import SongList from "./components/SongList";
 import Form from "./components/Form.js";
 
@@ -69,7 +69,13 @@ function App() {
     }).then(getSongs())
   }
   
-
+  const handleAddPlay = (song) => {
+    console.log("addPlay",song)
+    setPlayList([
+      ...playList,
+      song
+    ])
+  }
 	//  other Functions
 	const getSongs = () => {
 		console.log("getSongs");
@@ -88,8 +94,8 @@ function App() {
 	return (
 		<div className="App">
 			<header>Tunr header</header>
-			{/* <PlayList /> */}
-			<SongList handleUpdateClick={handleUpdateClick} songs={songs} />
+			<PlayList songs={playList}/>
+			<SongList handleAddPlay={handleAddPlay} handleUpdateClick={handleUpdateClick} songs={songs} />
 			<Form
 				handleUpdate={handleUpdate}
 				handleCreate={handleCreate}
