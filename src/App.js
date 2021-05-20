@@ -20,7 +20,7 @@ function App() {
 	const [formMode, setFormMode] = useState(["create"]);
 	const [formDataForUpdate, setFormDataForUpdate] = useState({});
 	// OTHER VARIABLES
-	const url = "http://songs-backend-app.herokuapp.com"; // Swith to this when deployed
+	const url = "https://songs-backend-app.herokuapp.com"; // Swith to this when deployed
 
 	//  handler Functions
 
