@@ -17,17 +17,7 @@ const Form = (props) => {
     setFormData({ ...formData, [event.target.name]: event.target.value });
   };
  
-  // function Create(props) {
-  //   return <h1>Create, {props.song}</h1>;
-  // }
-  
-  // const element = <Create name="Create Song" />;
-  // ReactDOM.render(
-  //   element,
-  //   document.getElementById('root')
-  // );
-
-  // if (props.mode = "Update"
+ 
 
   return (
     <form onSubmit={handleSubmit}>
