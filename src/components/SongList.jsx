@@ -1,9 +1,9 @@
 import React from "react";
 import Song from "./Song";
 
-const SongList = ({ songs, handleUpdate }) => {
-	const songDisplay = songs.map((song) => {
-		return <Song handleUpdate={handleUpdate}song={song} />;
+const SongList = ({ songs, handleUpdateClick }) => {
+	const songDisplay = songs.map((song, i) => {
+		return <Song key={i} handleUpdateClick={handleUpdateClick}song={song} />;
 	});
 	return (
 		<article>
