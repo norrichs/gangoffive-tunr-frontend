@@ -2,7 +2,7 @@ import "./App.css";
 import { useEffect, useState } from "react";
 import PlayList from "./components/PlayList";
 import SongList from "./components/SongList";
-import Form from "./components/Form";
+import Form from "./components/Form.js";
 
 function App() {
 	// STATE
@@ -30,7 +30,7 @@ function App() {
 		},
 	];
 	//  handler Functions
-
+  
 
   //  other Functions
   useEffect(()=>{
@@ -44,8 +44,8 @@ function App() {
 		<div className="App">
 			<header>Tunr header</header>
 			<PlayList />
-			<SongList />
-			<Form />
+			<SongList songs={songs}/>
+			{/* <Form /> */}
 		</div>
 	);
 }
