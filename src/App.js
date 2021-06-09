@@ -20,8 +20,8 @@ function App() {
 	const [formMode, setFormMode] = useState(["create"]);
 	const [formDataForUpdate, setFormDataForUpdate] = useState({});
 	// OTHER VARIABLES
-	const url = "https://songs-backend-app.herokuapp.com"; // Swith to this when deployed
-
+	// const url = "https://songs-backend-app.herokuapp.com"; // Swith to this when deployed
+	const url = "https://mnxg69suy1.execute-api.us-east-2.amazonaws.com/dev"
 	//  handler Functions
 
 	// triggered by clicking a Song component
@@ -51,7 +51,7 @@ function App() {
 	// retrieves a song from the DB and updates it w/ new data
 	const handleUpdate = (song) => {
 		console.log(song);
-		fetch(url + "/songs/" + song._id, {
+		fetch(url + "/songs/" + song.id, {
 			method: "PUT",
 			headers: {
 				"Content-Type": "application/json",
@@ -61,7 +61,7 @@ function App() {
 	};
   
   const handleDelete = (song) => {
-    fetch(url + "/songs/" + song._id, {
+    fetch(url + "/songs/" + song.id, {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json'
@@ -80,12 +80,18 @@ function App() {
 	const getSongs = () => {
 		console.log("getSongs");
 		fetch(url + "/songs/")
-			.then((res) => res.json())
+			.then((res) => {
+				console.log('getSongs response',res)
+				return res.json()
+			})
 			.then((data) => {
-				console.log("getSongs data", data.data);
-				setSongs(data.data);
+				console.log("getSongs body", data.body);
+				setSongs(data.body);
 			});
 	};
+
+
+
 
 	useEffect(() => {
 		getSongs();
